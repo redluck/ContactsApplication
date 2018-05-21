@@ -1,0 +1,65 @@
+<h3>Add contacts</h3>
+
+<div>
+	<form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit()">
+		<table id="table_form">
+			<tr>
+				<td>Enter name</td>
+				<td>
+					<input formControlName="name">
+					<label *ngIf="contactForm.get('name').invalid && buttonClicked" [ngClass]="'error'">Name is required</label>
+				</td>
+			</tr>
+			<tr>
+				<td>Enter surname</td>
+				<td>
+					<input formControlName="surname">
+					<label *ngIf="contactForm.get('surname').invalid && buttonClicked" [ngClass]="'error'">Surname is required</label>
+				</td>
+			</tr>
+			<tr>
+				<td>Enter age</td>
+				<td>
+					<input formControlName="age" type="number">
+				</td>
+			</tr>
+			<tr>
+				<td>Enter birth date</td>
+				<td>
+					<input formControlName="birthDate">
+					<label *ngIf="!isDateValid && buttonClicked">Invalid date format</label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button>Create</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<br/>
+
+	<!-- ===========================================================================>
+	< Messaggi di conferma	                                                        >
+	< =========================================================================== -->
+	<!--div *ngIf="statusCode; else processing">
+		<div *ngIf="statusCode === 201" [ngClass]="'success'">
+			Article added successfully.
+		</div>
+		<div *ngIf="statusCode === 409" [ngClass]="'success'">
+			Article already exists.
+		</div>
+		<div *ngIf="statusCode === 200" [ngClass]="'success'">
+			Article updated successfully.
+		</div>
+		<div *ngIf="statusCode === 204" [ngClass]="'success'">
+			Article deleted successfully.
+		</div>
+		<div *ngIf="statusCode === 500" [ngClass]="'error'">
+			Internal Server Error.
+		</div>
+	</div-->
+	<!--ng-template #processing>
+		<img *ngIf="requestProcessing" src="assets/images/loading.gif">
+	</ng-template-->
+</div>

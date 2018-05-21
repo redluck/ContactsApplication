@@ -1,0 +1,19 @@
+<h3>Contacts list</h3>
+<table id="table_list">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Age</th>
+		<th>Birth date</th>
+		<th></th>
+	</tr>
+	<tr *ngFor="let contact of contacts">
+		<td>{{contact.id}}</td>
+		<td>{{contact.name}}</td>
+		<td>{{contact.surname}}</td>
+		<td>{{contact.age}}</td>
+		<td>{{contact.birthDate}}</td>
+		<td><button>Detail</button></td>
+	</tr>
+</table>
