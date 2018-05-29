@@ -8,7 +8,6 @@ import { ContactService } from './../contact.service';
     templateUrl: './new-contact.component.html',
     styleUrls: ['./new-contact.component.css']
 })
-//Prova per PULL
 export class NewContactComponent implements OnInit {
 
     //Codice ritornato dall'operazione HTTP
