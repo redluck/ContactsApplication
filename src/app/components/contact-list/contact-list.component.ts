@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from './../contact';
-import { ContactService } from './../contact.service';
+import { Contact } from '../../models/contact';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
     selector: 'app-contact',
-    templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.css']
+    templateUrl: './contact-list.component.html',
+    styleUrls: ['./contact-list.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactListComponent implements OnInit {
 
     // Istanziamo una variabile contenente la lista
     contacts: Contact[];

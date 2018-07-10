@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Contact } from './../contact';
-import { ContactService } from './../contact.service';
-import { DateValidatorDirective, dateValidator } from '../shared/date.directive';
+import { Contact } from '../../models/contact';
+import { ContactService } from '../../services/contact.service';
+import { dateValidator } from '../../shared/date.directive';
 
 @Component({
     selector: 'app-new-contact',

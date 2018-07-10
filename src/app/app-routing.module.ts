@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './contact/contact.component';
-import { NewContactComponent } from './new-contact/new-contact.component';
+import { NewContactComponent } from './components/new-contact/new-contact.component';
+import { ContactListComponent } from './components/contact-list/contact-list.component';
 
 const routes: Routes = [
-    { path: 'contacts', component: ContactComponent },
-    { path: 'contacts/new', component: NewContactComponent }
+    { path: 'contacts', component: ContactListComponent },
+    { path: 'new', component: NewContactComponent }
 ];
 
 @NgModule({

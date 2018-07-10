@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Contact } from './contact';
+import { Contact } from '../models/contact';
 
 // Ogni service deve poter essere iniettabile
 @Injectable()
