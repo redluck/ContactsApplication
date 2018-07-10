@@ -3,15 +3,16 @@ import { Http, Response, Headers, URLSearchParams, RequestOptions } from '@angul
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Contact } from '../models/contact';
+import { environment } from '../../environments/environment';
 
 // Ogni service deve poter essere iniettabile
 @Injectable()
 export class ContactService {
 
     // URL per le operazioni CRUD
-    private allContactsUrl = 'http://localhost:8080/contact/all-contacts';
-    private contactUrl = 'http://localhost:8080/contact/detail';
-
+    private allContactsUrl = environment.url.list;
+    private contactUrl = environment.url.contact;
+    
     /*---------------------------------------------------------------------------*
 	| constructor()                                                              |
 	*---------------------------------------------------------------------------*/
