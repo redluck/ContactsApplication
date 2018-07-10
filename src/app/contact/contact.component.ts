@@ -11,15 +11,15 @@ export class ContactComponent implements OnInit {
 
     // Istanziamo una variabile contenente la lista
     contacts: Contact[];
-    //Codice ritornato dall'operazione HTTP
+    // Codice ritornato dall'operazione HTTP
     httpStatusCode: number;
 
-	/*---------------------------------------------------------------------------*
+    /*---------------------------------------------------------------------------*
 	| constructor()                                                              |
 	*---------------------------------------------------------------------------*/
     constructor(private contactService: ContactService) { }
 
-	/*---------------------------------------------------------------------------*
+    /*---------------------------------------------------------------------------*
 	| ngOnInit()                                                                 |
 	| usato per l'esecuzione di operazioni dopo che il componente è stato        |
 	| inizializzato tramite il costruttore                                       |
@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
         this.getContacts();
     }
 
-	/*---------------------------------------------------------------------------*
+    /*---------------------------------------------------------------------------*
 	| getContacts()                                                              |
 	| contactService.getContacts() attende una risposta dal server               |
 	| Observable<Contact[]>.subscribe() la imposta nella proprietà di classe     |

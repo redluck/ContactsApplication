@@ -27,7 +27,7 @@
 				<td>Enter birth date</td>
 				<td>
 					<input formControlName="birthDate">
-					<label *ngIf="!isDateValid && buttonClicked">Invalid date format</label>
+					<label *ngIf="contactForm.get('birthDate').invalid && buttonClicked">Invalid date format</label>
 				</td>
 			</tr>
 			<tr>

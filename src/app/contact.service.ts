@@ -31,7 +31,7 @@ export class ContactService {
                 map(response => response.json()),
                 // Intercettiamo eventuali errori
                 catchError(error => {
-                    return Observable.throw(error)
+                    return Observable.throw(error);
                 })
             );
     }
@@ -42,14 +42,14 @@ export class ContactService {
     addContact(contact: Contact): Observable<number> {
         // Terzo parametro "options?" da passare al metodo Http.post()
         // (costituito da un Headers)
-        let myHeaders = new Headers({ 'Content-Type': 'application/json' });
-        let httpOptions = new RequestOptions({ headers: myHeaders });
+        let myHeaders = new Headers({'Content-Type': 'application/json'});
+        let httpOptions = new RequestOptions({headers: myHeaders});
 
         return this.http.post(this.contactUrl, contact, httpOptions)
             .pipe(
                 map(response => response.status),
                 catchError(error => {
-                    return Observable.throw(error)
+                    return Observable.throw(error);
                 })
             );
     }

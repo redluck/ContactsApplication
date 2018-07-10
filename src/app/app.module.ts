@@ -7,13 +7,15 @@ import { ContactService } from './contact.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DateValidatorDirective } from './shared/date.directive';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         ContactComponent,
-        NewContactComponent
+        NewContactComponent,
+        DateValidatorDirective
     ],
     imports: [
         BrowserModule,
