@@ -1,0 +1,26 @@
+<h3>Template Driven Form</h3>
+
+<form #myForm="ngForm">
+	<div>
+		<label for="txtName">Name</label>
+		<input type="text" id="txtName" required [(ngModel)]="model.name" name="name" #myName="ngModel">
+	</div>
+	<!-- Nascosto se myName è valido o è pristine (non modificato rispetto al valore originario) -->
+	<div [hidden]="myName.valid || myName.pristine">Il nome é obbligatorio!</div>
+	<div>
+		<label for="txtSurname">Surname</label>
+		<input type="text" id="txtSurname" required [(ngModel)]="model.surname" name="surname">
+	</div>
+	<div>
+		<label for="txtAge">Age</label>
+		<input type="text" id="txtAge" required [(ngModel)]="model.age" name="age">
+	</div>
+	<div>
+		<label for="txtBirth">Birth date</label>
+		<input type="text" id="txtBirth" required [(ngModel)]="model.birthDate" name="birthDate">
+	</div>
+	<button type="button" [disabled]="!myForm.valid" (click)="createContact()">Create</button>
+</form>
+
+<br>
+<div>{{httpStatusCode}} {{httpCodeDescription}}</div>

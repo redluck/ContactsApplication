@@ -8,6 +8,7 @@ import { NewContactComponent } from './components/new-contact/new-contact.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateValidatorDirective } from './shared/date.directive';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
         AppComponent,
         ContactListComponent,
         NewContactComponent,
-        DateValidatorDirective
+        DateValidatorDirective,
+        TemplateDrivenFormComponent
     ],
     imports: [
         BrowserModule,
