@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateValidatorDirective } from './shared/date.directive';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TemplateDrivenFormComponent } from './components/template-driven-form/t
         ContactListComponent,
         NewContactComponent,
         DateValidatorDirective,
-        TemplateDrivenFormComponent
+        TemplateDrivenFormComponent,
+        ReactiveFormComponent
     ],
     imports: [
         BrowserModule,
