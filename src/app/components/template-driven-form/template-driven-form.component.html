@@ -1,6 +1,6 @@
 <h3>Template Driven Form</h3>
 
-<form #myForm="ngForm">
+<form #myForm="ngForm" (ngSubmit)="createContact()" [hidden]="submitted">
 	<div>
 		<label for="txtName">Name</label>
 		<input type="text" id="txtName" required [(ngModel)]="model.name" name="name" #myName="ngModel">
@@ -19,7 +19,7 @@
 		<label for="txtBirth">Birth date</label>
 		<input type="text" id="txtBirth" required [(ngModel)]="model.birthDate" name="birthDate">
 	</div>
-	<button type="button" [disabled]="!myForm.valid" (click)="createContact()">Create</button>
+	<button type="submit" [disabled]="!myForm.valid">Create</button>
 </form>
 
 <br>

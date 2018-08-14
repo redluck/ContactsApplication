@@ -19,7 +19,24 @@ export class TemplateDrivenFormComponent {
 	//Descrizione del codice ritornato
 	private httpCodeDescription: string;
 
+	//Variabile di controllo
+	private submitted: boolean;
+
 	constructor(private contactService: ContactService) { }
+
+	createContact() {
+		this.contactService.addContact(this.model)
+			.subscribe(
+				successCode => {
+					this.httpStatusCode = successCode;
+					this.setHttpCodeDescription();
+					this.submitted = true;
+				},
+				errorCode => {
+					this.httpStatusCode = errorCode
+				}
+			);
+	}
 
 	setHttpCodeDescription() {
 		switch (this.httpStatusCode) {
@@ -29,13 +46,6 @@ export class TemplateDrivenFormComponent {
 			default:
 				this.httpCodeDescription = '';
 		}
-	}
-
-	createContact() {
-		this.contactService.addContact(this.model)
-			.subscribe(successCode => { this.httpStatusCode = successCode; this.setHttpCodeDescription() },
-				errorCode => this.httpStatusCode = errorCode
-			);
 	}
 
 }
