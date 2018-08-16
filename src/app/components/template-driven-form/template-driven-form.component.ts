@@ -19,11 +19,17 @@ export class TemplateDrivenFormComponent {
 	//Descrizione del codice ritornato
 	private httpCodeDescription: string;
 
-	//Variabile di controllo
+	//Variabile di controllo sull'invio del form
 	private submitted: boolean;
 
+	/*---------------------------------------------------------------------------*
+	| constructor()                                                              |
+	*---------------------------------------------------------------------------*/
 	constructor(private contactService: ContactService) { }
 
+	/*---------------------------------------------------------------------------*
+	| createContact()                                                            |
+	*---------------------------------------------------------------------------*/
 	createContact() {
 		this.contactService.addContact(this.model)
 			.subscribe(
@@ -38,6 +44,9 @@ export class TemplateDrivenFormComponent {
 			);
 	}
 
+	/*---------------------------------------------------------------------------*
+	| setHttpCodeDescription()                                                   |
+	*---------------------------------------------------------------------------*/
 	setHttpCodeDescription() {
 		switch (this.httpStatusCode) {
 			case 201:

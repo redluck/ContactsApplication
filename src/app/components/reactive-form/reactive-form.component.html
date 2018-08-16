@@ -1,3 +1,25 @@
-<p>
-  reactive-form works!
-</p>
+<h3>Reactive Form (Model Driven Form)</h3>
+
+<form [formGroup]="myForm">
+	<div>
+		<label for="txtName">Name</label>
+		<input type="text" formControlName="txtName">
+	</div>
+	<div [hidden]="myForm.controls.txtName.valid || myForm.controls.txtName.pristine">Il nome é obbligatorio!</div>
+	<div>
+		<label for="txtSurname">Surname</label>
+		<input type="text" formControlName="txtSurname">
+	</div>
+	<div>
+		<label for="txtAge">Age</label>
+		<input type="text" formControlName="txtAge">
+	</div>
+	<div>
+		<label for="txtBirth">Birth date</label>
+		<input type="text" formControlName="txtBirth">
+	</div>
+	<button type="button" (click)="createContact()">Create</button>
+</form>
+
+<br>
+<div>{{httpStatusCode}}</div>
