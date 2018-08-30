@@ -10,7 +10,7 @@ import { DateValidatorDirective } from './shared/date.directive';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
-
+import { TestGuard } from './services/test-guard';
 
 @NgModule({
     declarations: [
@@ -29,7 +29,8 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
         ReactiveFormsModule
     ],
     providers: [
-        ContactService
+		ContactService,
+		TestGuard
     ],
     bootstrap: [
         AppComponent
