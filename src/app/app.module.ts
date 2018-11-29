@@ -11,6 +11,7 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { TestGuard } from './services/test-guard';
+import { MyResolverService } from './services/my-resolver.service';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { TestGuard } from './services/test-guard';
     ],
     providers: [
 		ContactService,
-		TestGuard
+        TestGuard,
+        MyResolverService
     ],
     bootstrap: [
         AppComponent
