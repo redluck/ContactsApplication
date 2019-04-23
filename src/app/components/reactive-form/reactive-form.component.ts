@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Contact } from '../../models/contact';
-import { ContactService } from '../../services/contact.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
+import {Contact} from '../../models/contact';
+import {ContactService} from '../../services/contact.service';
 
 @Component({
     selector: 'app-reactive-form',
@@ -12,11 +12,11 @@ import { ContactService } from '../../services/contact.service';
 export class ReactiveFormComponent implements OnInit {
 
     myForm = this.fb.group({
-        txtName: ["", Validators.required],
-        txtSurname: ["", Validators.required],
-        txtAge: ["", Validators.required],
-        txtBirth: ["", Validators.required]
-    })
+        txtName: ['', Validators.required],
+        txtSurname: ['', Validators.required],
+        txtAge: ['', Validators.required],
+        txtBirth: ['', Validators.required]
+    });
 
     //Modello da aggiornare man mano che cambiano i valori del form
     model: Contact;
@@ -25,6 +25,7 @@ export class ReactiveFormComponent implements OnInit {
     private httpStatusCode: number;
 
     data: any;
+
     ngOnInit() {
         this.data = this.route.snapshot.data;
     }
@@ -40,12 +41,12 @@ export class ReactiveFormComponent implements OnInit {
         //sulle corrispondenti proprietà del modello dei dati
         this.myForm.valueChanges
             .subscribe(value => {
-                this.model.name = value.txtName;
-                this.model.surname = value.txtSurname;
-                this.model.age = value.txtAge;
-                this.model.birthDate = value.txtBirth;
-                console.log(this.model);
-            }
+                    this.model.name = value.txtName;
+                    this.model.surname = value.txtSurname;
+                    this.model.age = value.txtAge;
+                    this.model.birthDate = value.txtBirth;
+                    console.log(this.model);
+                }
             );
     }
 
@@ -61,7 +62,7 @@ export class ReactiveFormComponent implements OnInit {
                     //this.submitted = true;
                 },
                 errorCode => {
-                    this.httpStatusCode = errorCode
+                    this.httpStatusCode = errorCode;
                 }
             );
     }
