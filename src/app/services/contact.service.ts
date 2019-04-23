@@ -12,8 +12,8 @@ export class ContactService {
     // URL per le operazioni CRUD
     private allContactsUrl = environment.url.list;
     private contactUrl = environment.url.contact;
-    
-    /*---------------------------------------------------------------------------*
+
+  /*---------------------------------------------------------------------------*
 	| constructor()                                                              |
 	*---------------------------------------------------------------------------*/
     // Iniettiamo l'HttpClient dentro il servizio
@@ -21,7 +21,7 @@ export class ContactService {
         private http: Http
     ) { }
 
-    /*---------------------------------------------------------------------------*
+  /*---------------------------------------------------------------------------*
 	| getContacts()                                                              |
 	| una chiamata asincrona ad un server ritorna sempre un oggetto Observable   |
 	*---------------------------------------------------------------------------*/
@@ -37,14 +37,14 @@ export class ContactService {
             );
     }
 
-    /*---------------------------------------------------------------------------*
+  /*---------------------------------------------------------------------------*
 	| addContact()                                                               |
 	*---------------------------------------------------------------------------*/
     addContact(contact: Contact): Observable<number> {
         // Terzo parametro "options?" da passare al metodo Http.post()
         // (costituito da un Headers)
-        let myHeaders = new Headers({'Content-Type': 'application/json'});
-        let httpOptions = new RequestOptions({headers: myHeaders});
+        const myHeaders = new Headers({'Content-Type': 'application/json'});
+        const httpOptions = new RequestOptions({headers: myHeaders});
 
         return this.http.post(this.contactUrl, contact, httpOptions)
             .pipe(

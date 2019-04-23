@@ -6,7 +6,7 @@
 export const environment = {
     production: false,
     url: {
-        list: 'http://localhost:8080/contact/all-contacts',
-        contact: 'http://localhost:8080/contact/detail'
+        list: 'http://localhost:8080/Contacts-WS/all-contacts',
+        contact: 'http://localhost:8080/Contacts-WS/detail'
     }
 };
